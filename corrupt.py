@@ -72,7 +72,7 @@ while True:
         print('Invalid')
 
 
-# ask for file size
+# ask for file name
 while True:
     file_name = ''
     try:
