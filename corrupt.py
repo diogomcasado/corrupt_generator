@@ -59,7 +59,7 @@ def create_file(name, size):
 
 # ask for file size
 while True:
-    file_size = input('Insert file size in MB (r for random): ')
+    file_size = input('Insert file size in Mb (r for random): ')
 
     try:
         if file_size == 'r':
