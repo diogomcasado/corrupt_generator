@@ -50,7 +50,11 @@ def create_file(name, size):
     path = os.path.join(file_path, name)
     with open(path, 'wb') as fout:
         fout.write(os.urandom(size))
-    print('\n' + name + ' created with ' + str(size) + ' bytes\n')
+
+    print('\n' + name + ' created with ' + str(round(file_size, 2)) + 'Mb\n')
+    
+    print("Press Enter Key to close.")
+    input()
 
 
 # ask for file size
@@ -60,12 +64,12 @@ while True:
     try:
         if file_size == 'r':
             file_size = random.uniform(min_file_size, max_file_size)
-            file_size = get_bytes(file_size)
+            file_size_bytes = get_bytes(file_size)
             break
 
         elif float(file_size):
             if float(file_size) > 0:
-                file_size = get_bytes(float(file_size))
+                file_size_bytes = get_bytes(float(file_size))
                 break
 
     except ValueError:
@@ -81,7 +85,7 @@ while True:
     finally:
         if file_name == 'r':
             file_name = random_name()
-            create_file(file_name, file_size)
+            create_file(file_name, file_size_bytes)
         elif '.' not in file_name:
             continue
         elif file_name.endswith('.'):
