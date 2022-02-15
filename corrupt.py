@@ -29,9 +29,9 @@ if name_numbers:
 
 # function to convert megabytes to bytes
 def get_bytes(mb):
-    mb = 1024 * 1024 * mb
-    mb = round(mb)
-    return mb
+    bytes = 1024 * 1024 * mb
+    bytes = round(bytes)
+    return bytes
 
 
 # function to create a random lowercase name with extension
@@ -91,5 +91,5 @@ while True:
         elif file_name.endswith('.'):
             continue
         else:
-            create_file(file_name, file_size)
+            create_file(file_name, file_size_bytes)
         break
